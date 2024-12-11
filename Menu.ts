@@ -1,16 +1,34 @@
 
 import readlinesync = require('readline-sync');
 import {colors} from "./src/util/Colors";
+import { Conta } from './src/model/Conta';
 
 
 export function main() {
 
     let opcao: number;
 
+    // Instancias (objetos) da Classe Conta
+    const c1 = new Conta(1, 123, 1, "Emily", 100000);
+    c1.visualizar();
+    
+    // Saque
+    console.log(c1.sacar(200000.00));
+    c1.visualizar();
+
+
+    const c2 = new Conta(2, 123, 2, "Marina", 200000);
+    c2.visualizar();
+    
+    // Depósito
+    c2.depositar(100.00);
+    c2.visualizar();
+
+
     while (true) {
 
     console.log(colors.fg.magentastrong, `#=`.repeat(30),colors.reset);
-    console.log(colors.fg.blackstrong, `\n\t\tBANCO DO BRAZIL COM Z`, colors.reset, 
+    console.log(colors.fg.blackstrong, `\n\t\tBANCO DO BRAZIL COM Z\n`, colors.reset, 
         `\n\t\t1 - Criar conta
         \n\t\t2-  Listas todas as contas
         \n\t\t3 - Buscar Conta por numero
