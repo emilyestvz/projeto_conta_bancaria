@@ -13,7 +13,7 @@ export function main() {
     c1.visualizar();
     
     // Saque
-    console.log(c1.sacar(200000.00));
+    console.log(c1.sacar(500.00));
     c1.visualizar();
 
 
