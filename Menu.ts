@@ -2,12 +2,14 @@
 import readlinesync = require('readline-sync');
 import {colors} from "./src/util/Colors";
 import { Conta } from './src/model/Conta';
+import { ContaCorrente } from './src/model/ContaCorrente';
 
 
 export function main() {
 
     let opcao: number;
 
+    /*
     // Instancias (objetos) da Classe Conta
     const c1 = new Conta(1, 123, 1, "Emily", 100000);
     c1.visualizar();
@@ -22,8 +24,21 @@ export function main() {
     
     // Depósito
     c2.depositar(100.00);
-    c2.visualizar();
+    c2.visualizar();*/
 
+    // Contas Correntes
+    const cc1 = new ContaCorrente(3, 789, 1, "Fernande", 100000, 1000)
+    cc1.visualizar();
+
+    // Saque na CC
+    cc1.sacar(100500);
+    cc1.visualizar();
+    
+    // Depósito na CC
+    cc1.depositar(2000);
+    cc1.visualizar();
+
+    console.log('');
 
     while (true) {
 
