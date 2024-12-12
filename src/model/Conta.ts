@@ -106,7 +106,8 @@ export class Conta{
             \n\t\tTipo da conta: ${tipo}
             \n\t\tTitular: ${this._titular}
             \n\t\tSaldo: R$ ${this._saldo}`)
-        console.log(colors.fg.magentastrong, `#=`.repeat(30),colors.reset);
+
+
     }
 
 }
