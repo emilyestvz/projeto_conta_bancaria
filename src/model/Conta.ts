@@ -1,7 +1,7 @@
 import {colors} from "../util/Colors";
 
 // Criando uma classe
-export class Conta{
+export abstract class Conta{
 
     // Modelo de dados
     private _numero: number;    // o '_' para identificar que é privado
