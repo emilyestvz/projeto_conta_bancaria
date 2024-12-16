@@ -12,10 +12,10 @@ Este é um projeto de console em TypeScript que simula as operações de um sist
 - Buscar conta pelo nome do titular
 
 ## Tecnologias Utilizadas
-- **Node.js**: Ambiente de execução JavaScript.
-- **TypeScript**: Linguagem utilizada para tipagem estática.
-- **readline-sync**: Biblioteca para entrada de dados no terminal.
-- **Colors Utility**: Configuração de cores para estilizar as mensagens no console.
+**Node.js**: Ambiente de execução JavaScript.
+**TypeScript**: Linguagem utilizada para tipagem estática.
+**readline-sync**: Biblioteca para entrada de dados no terminal.
+**Colors Utility**: Configuração de cores para estilizar as mensagens no console.
 
 ## Estrutura do Projeto
 O código principal está estruturado no arquivo `Menu.ts`, que implementa o menu interativo com as operações disponíveis no sistema bancário.
@@ -36,5 +36,7 @@ O código principal está estruturado no arquivo `Menu.ts`, que implementa o men
    tsc
 
 4. Execute o programa:
-  ```bash
-  node dist/Menu.ts
+   ```bash
+   node dist/Menu.ts
+
+
