@@ -20,8 +20,13 @@ export abstract class Conta{
 	}
 
     /* Gerar os Metódos Getters e Setters
+<<<<<<< HEAD
     getters  - são métodos que retornam valores das propriedades
     sets    - são métodos que alteram valores das propriedades*/
+=======
+    getters  - são métodos que retornam valores das propriedades - pegar
+    sets    - são métodos que alteram/atribuir valores das propriedades - setar */
+>>>>>>> main
 
     // gets 
 	public get numero(): number {
