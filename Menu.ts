@@ -10,7 +10,7 @@ export function main() {
     while (true) {
 
     console.log(colors.fg.magentastrong, `#=`.repeat(30),colors.reset);
-    console.log(colors.fg.blackstrong, `\n\t\tBANCO DO BRAZIL COM Z`, colors.reset, 
+    console.log(colors.fg.blackstrong,  `\n\t\t🔮 DARK BANK 🔮\n`, colors.reset, 
         `\n\t\t1 - Criar conta
         \n\t\t2-  Listas todas as contas
         \n\t\t3 - Buscar Conta por numero
