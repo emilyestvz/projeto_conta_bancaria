@@ -9,9 +9,9 @@ import { ContaController } from './src/controller/ContaController';
 
 export function main() {
 
-    let opcao, numero, agencia, tipo, saldo, limite, aniversario: number;
+    let opcao, numero, agencia, tipo, saldo, limite, aniversario, numDestino, valor:number;
     let titular: string;
-    const tipoContas = ['Conta Corrente', 'Conta Poupança'];
+    const tipoContas = ['Conta Corrente', 'Conta Poupanca'];
 
     // Criando um objeto da classe ContaController
     const contas = new ContaController();
@@ -53,7 +53,7 @@ export function main() {
     while (true) {
 
     console.log(colors.fg.magentastrong, `#=`.repeat(30),colors.reset);
-    console.log(colors.fg.blackstrong, `\n\t\tBANCO DO BRAZIL COM Z\n`, colors.reset, 
+    console.log(colors.fg.blackstrong, `\n\t\t🔮 DARK BANK 🔮\n`, colors.reset, 
         `\n\t\t1 - Criar conta
         \n\t\t2-  Listas todas as contas
         \n\t\t3 - Buscar Conta por numero
@@ -103,13 +103,13 @@ export function main() {
                         contas.cadastrar(new ContaPoupanca(contas.gerarNumero(), agencia, tipo, titular, saldo, aniversario));
                         break;
                 }
-                keyPress()
+                keyPress();
                 break;
 
             case 2: 
                 console.log(colors.fg.whitestrong, `\n Listar todas as Contas`, colors.reset)
                 contas.listarTodas();
-                keyPress()
+                keyPress();
             break;
 
             case 3: 
@@ -169,23 +169,56 @@ export function main() {
 
                     contas.deletar(numero);
 
-                keyPress()
+                keyPress();
             break;
             
             case 6:
-                console.log(colors.fg.whitestrong, `\n Sacar`, colors.reset)
+                console.log(colors.fg.whitestrong, `\n Sacar`, colors.reset);
+
+                    console.log("Digite o número da conta:");
+                    numero = readlinesync.questionInt('');
+
+                    console.log("Digite o valor do Saque:");
+                    valor = readlinesync.questionFloat('');
+
+                    contas.sacar(numero, valor);
+
+                keyPress();
             break;
             
             case 7:
-                console.log(colors.fg.whitestrong, `\n Depositar`, colors.reset)
+                console.log(colors.fg.whitestrong, `\n Depositar`, colors.reset);
+
+                console.log("Digite o número da conta:");
+                    numero = readlinesync.questionInt('');
+
+                    console.log("Digite o valor do Depósito:");
+                    valor = readlinesync.questionFloat('');
+
+                    contas.depositar(numero, valor);
+
+                keyPress();
             break;
             
             case 8:
-                console.log(colors.fg.whitestrong, `\n Transferir valores entre contas`, colors.reset)
+                console.log(colors.fg.whitestrong, `\n Transferir valores entre contas`, colors.reset);
+
+                console.log("Digite o número da conta de origem:");
+                    numero = readlinesync.questionInt('');
+
+                    console.log("Digite o número da conta de destino:");
+                    numDestino = readlinesync.questionInt('');
+
+                    console.log("Digite o valor da Transferência:");
+                    valor = readlinesync.questionFloat('');
+
+                    contas.transferir(numero, numDestino, valor);
+
+                keyPress();
             break;
 
             default:
-                console.log(colors.fg.whitestrong, `\n Opção inválida!`, colors.reset)
+                console.log(colors.fg.whitestrong, `\n Opção inválida!`, colors.reset);
                 break;
         }
     } 
@@ -195,8 +228,8 @@ export function main() {
 
 function about() {
     console.log(colors.fg.blackstrong, 
-        `\nCriado por Emily Cristiny Dias
-         \nGitHub: https://github.com/emilyestvz`, colors.reset);
+        `\n✨ Criado por Emily Cristiny Dias
+         \n✨ GitHub: https://github.com/emilyestvz`, colors.reset);
     console.log(colors.fg.magentastrong, `#=`.repeat(30), colors.reset);
 }
 

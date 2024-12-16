@@ -52,15 +52,36 @@ export class ContaController implements ContaRepository{
     }
 
     sacar(numero: number, valor: number): void {
-        throw new Error("Method not implemented.");
+        const buscaConta = this.buscarnoArray(numero)
+
+		if (buscaConta !== null) {
+            if(buscaConta.sacar(valor) === true)
+				console.log("O Saque foi efetuado com sucesso!");
+		}else 
+            console.log('\nConta não Encontrada!')
     }
 
     depositar(numero: number, valor: number): void {
-        throw new Error("Method not implemented.");
+        const buscaConta = this.buscarnoArray(numero)
+
+		if (buscaConta !== null) {
+            buscaConta.depositar(valor)
+			console.log("O Depósito foi efetuado com sucesso!");
+		}else 
+            console.log('\nConta não Encontrada!')
     }
 
     transferir(numOrigem: number, numDestino: number, valor: number): void {
-        throw new Error("Method not implemented.");
+        const contaOrigem = this.buscarnoArray(numOrigem)
+		const contaDestino = this.buscarnoArray(numDestino)
+
+		if (contaOrigem !== null && contaDestino !== null) {
+            if(contaOrigem.sacar(valor) === true){
+				contaDestino.depositar(valor);
+				console.log("A Transferência foi efetuada com sucesso!");
+			}
+		}else 
+            console.log('\nConta de Origem e/ou Conta de Destonos não foi Encontrada!')
     }
 
     // Métodos Auxiliares
