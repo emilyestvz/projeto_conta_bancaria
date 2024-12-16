@@ -8,6 +8,18 @@ export class ContaController implements ContaRepository{
 
     // Controlar os números das contas
     public numero: number = 0;
+        
+    procurarTitular(titular: string): void {
+
+        // Filtrar a lista de contas pelo nome do titular e imprimir as contas encontradas
+        let buscaPorTitular = this.listaContas.filter(conta => 
+            conta.titular.toUpperCase().includes(titular.toUpperCase())
+        )
+
+        // Listagem de dados
+        buscaPorTitular.forEach(conta => conta.visualizar());
+    }
+
     
     // MÉTODOS DA REPOSITORY
     procurarPorNumero(numero: number): void {
