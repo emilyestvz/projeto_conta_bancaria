@@ -1,6 +1,7 @@
 # 🔮 DARK BANK 🔮
 Este é um projeto de console em TypeScript que simula as operações de um sistema bancário. Ele permite criar contas, listar todas as contas, buscar contas específicas, realizar transações financeiras como saques, depósitos e transferências, além de atualizar e apagar contas.
 
+<img src="main_update.jpg">
 
 ## Funcionalidades
 - Criar uma nova conta bancária
